@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<meta charset="UTF-8">
+
+<html lang="es">
+    
+
+    <head>
+        <!--Creado por Darwing Borquez-->        
+        <textarea2 id="rectangulo"></textarea2>
+        <title>Encriptador / Desencriptador</title>
+        <link rel="stylesheet" href="Style.css">
+
+    </head>
+
+    <body>
+        <img id="Logo" src="Logo.png">
+       
+        <textarea id="ingresar" name="text" placeholder="Ingrese el Texto";></textarea>
+        <img id="vector" src="Vector.png">
+        <p id="info">solo letras minúsculas y sin acentos</p>
+        <img id="munheco" src="Munheco.png">        
+
+    
+        <div id="botones">
+            <button id="b1" ><h id="tb">Encriptar</h></button>
+            <button2 id="b2" ><h id="tb">Desencriptar</h></button2>
+            <button3 id="b3"><h id ="tb">Copiar</h></button3>
+        </div>
+        <div2 id="munhecotext">
+           <h1 id="text1"><strong>Ningún mensaje fue encontrado</strong></h1>
+            <p id="text2">Ingresa el texto que desea encriptar o desencriptar</p>
+    
+
+        </div2>
+    </body>
+
+</html>
+<script>
+       var texto = document.querySelector("textarea");
+       var b1 = document.querySelector("button");
+       var b2 = document.querySelector("button2");
+       var b3 = document.querySelector("button3");
+       var textofinal =document.querySelector("textarea2");
+    
+        function ocultarAparecer(){
+            
+            document.getElementById("munhecotext").style.visibility = "hidden";
+            b3.style.visibility = "visible";
+            document.getElementById("munheco").style.visibility = "hidden";
+        } 
+    
+       function encriptar(){
+
+         if(texto.value !=""){
+            var t2 = texto.value.replace(/e/g,"enter");
+            var t3 = t2.replace(/i/g,"imes");
+            var t4 = t3.replace(/a/g,"ai");
+            var t5 = t4.replace(/o/g,"ober");
+            var t6 = t5.replace(/u/g,"ufat");
+            textofinal.innerHTML ="<h1 id=f1>" + t6 +"</h>" ;
+           ocultarAparecer();
+         }
+    
+    }
+
+        function desencriptar(){
+
+            if(texto.value !=""){            
+                var t2 = texto.value.replace(/enter/g,"e");
+                var t3 = t2.replace(/imes/g,"i");
+                var t4 = t3.replace(/ai/g,"a");
+                var t5 = t4.replace(/ober/g,"o");
+                var t6 = t5.replace(/ufat/g,"u");
+                textofinal.innerHTML ="<h1 id=f1>" + t6 +"</h>" ;
+                ocultarAparecer();
+            }
+        }
+        function copiarTodo(){
+            document.querySelector("textarea2");
+            document.execCommand("copy");
+        }
+    
+    b3.style.visibility = "hidden";
+    b1.onclick = encriptar;
+    b2.onclick = desencriptar;
+    b3.onclick = copiarTodo;
+
+       
+
+    </script>
