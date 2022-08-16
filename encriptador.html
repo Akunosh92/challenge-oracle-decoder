@@ -6,7 +6,7 @@
 
     <head>
         <!--Creado por Darwing Borquez-->        
-        <textarea2 id="rectangulo"></textarea2>
+        <textarea id="rectangulo" name= "text" placeholder=""></textarea>
         <title>Encriptador / Desencriptador</title>
         <link rel="stylesheet" href="Style.css">
 
@@ -36,11 +36,11 @@
 
 </html>
 <script>
-       var texto = document.querySelector("textarea");
+       var texto = document.getElementById("ingresar");
        var b1 = document.querySelector("button");
        var b2 = document.querySelector("button2");
        var b3 = document.querySelector("button3");
-       var textofinal =document.querySelector("textarea2");
+       var textofinal =document.getElementById("rectangulo");
     
         function ocultarAparecer(){
             
@@ -57,7 +57,8 @@
             var t4 = t3.replace(/a/g,"ai");
             var t5 = t4.replace(/o/g,"ober");
             var t6 = t5.replace(/u/g,"ufat");
-            textofinal.innerHTML ="<h1 id=f1>" + t6 +"</h>" ;
+            
+            textofinal.innerHTML =  t6 ;
            ocultarAparecer();
          }
     
@@ -71,14 +72,16 @@
                 var t4 = t3.replace(/ai/g,"a");
                 var t5 = t4.replace(/ober/g,"o");
                 var t6 = t5.replace(/ufat/g,"u");
-                textofinal.innerHTML ="<h1 id=f1>" + t6 +"</h>" ;
+                textofinal.innerHTML = t6 ;
                 ocultarAparecer();
             }
         }
-       // function copiarTodo(){
-         //   document.querySelector("textarea2");
-           // document.execCommand("copy");
-       // }
+     function copiarTodo(){
+        var textCopy = document.getElementById("rectangulo")
+         textCopy.select();
+         document.execCommand("copy");
+         return;
+        }
     
     b3.style.visibility = "hidden";
     b1.onclick = encriptar;
