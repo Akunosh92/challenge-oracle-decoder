@@ -35,59 +35,6 @@
     </body>
 
 </html>
-<script>
-       var texto = document.getElementById("ingresar");
-       var b1 = document.querySelector("button");
-       var b2 = document.querySelector("button2");
-       var b3 = document.querySelector("button3");
-       var textofinal =document.getElementById("rectangulo");
-    
-        function ocultarAparecer(){
-            
-            document.getElementById("munhecotext").style.visibility = "hidden";
-            b3.style.visibility = "visible";
-            document.getElementById("munheco").style.visibility = "hidden";
-        } 
-    
-       function encriptar(){
-
-         if(texto.value !=""){
-            var t2 = texto.value.replace(/e/g,"enter");
-            var t3 = t2.replace(/i/g,"imes");
-            var t4 = t3.replace(/a/g,"ai");
-            var t5 = t4.replace(/o/g,"ober");
-            var t6 = t5.replace(/u/g,"ufat");
-            
-            textofinal.innerHTML =  t6 ;
-           ocultarAparecer();
-         }
-    
-    }
-
-        function desencriptar(){
-
-            if(texto.value !=""){            
-                var t2 = texto.value.replace(/enter/g,"e");
-                var t3 = t2.replace(/imes/g,"i");
-                var t4 = t3.replace(/ai/g,"a");
-                var t5 = t4.replace(/ober/g,"o");
-                var t6 = t5.replace(/ufat/g,"u");
-                textofinal.innerHTML = t6 ;
-                ocultarAparecer();
-            }
-        }
-     function copiarTodo(){
-        var textCopy = document.getElementById("rectangulo")
-         textCopy.select();
-         document.execCommand("copy");
-         return;
-        }
-    
-    b3.style.visibility = "hidden";
-    b1.onclick = encriptar;
-    b2.onclick = desencriptar;
-    b3.onclick = copiarTodo;
-
-       
+<script src="Script.js">     
 
     </script>
